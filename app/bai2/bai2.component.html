@@ -1,0 +1,20 @@
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Hinh</th>
+            <th>Ho va Ten</th>
+            <th>Ngay Sinh</th>
+            <th>Gioi Tinh</th>
+            <th>Diem</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor ='let p of students'>
+            <td><img src="{{p.photo}}" width="50px" height="50px"></td>
+            <td>{{p.fullName}}</td>
+            <td>{{p.birthday}}</td>
+            <td>{{p.gender}}</td>
+            <td>{{p.mark}}</td>
+        </tr>
+    </tbody>
+</table>

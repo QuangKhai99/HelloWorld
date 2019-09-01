@@ -1,0 +1,53 @@
+
+<div class=page>
+<ul class="nav nav-pills" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link bg-light active text-black-50" data-toggle="pill" href="#home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-black-50 bg-light" data-toggle="pill" href="#menu1">Cart</a>
+    </li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h1>Hello World</h1>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+        <h3>Your Cart</h3>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Quality</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of info">
+                    <td>{{p.id}}</td>
+                    <td><img *ngIf="anhien" src="{{p.image}}" width=50px height=50px></td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.quality}}
+                      <button class="btn-secondary" (click)="tang(p.id)"><b>+</b></button>
+                      <button class="btn-secondary" (click)="giam(p.id)"><b>-&nbsp;</b></button>
+                    </td>
+                    <td>
+                        <button class="btn-secondary" (click)="hien()">{{p.actionview}}</button>
+                        <button class="btn-secondary" (click)="an()">{{p.actiondel}}</button>
+                    </td>
+                </tr>
+                <tr>
+                  <td>Total Price:</td>
+                  <td  colspan="5">{{Tong()}}</td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+  </div>
+</div>

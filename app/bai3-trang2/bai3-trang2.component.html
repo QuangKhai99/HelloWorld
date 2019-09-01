@@ -1,0 +1,33 @@
+<div class="card">
+    <div class="card-header bg-dark text-white-50">List Product</div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-2">Filtered by:</div>
+            <div class="col-2"><input (keyup)="filter($event)" class="form-control" id="myInput" type="text" ></div>
+        </div>
+        <p><b>Filtered by:</b></p>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th><button class="btn-secondary" (click)="An()">Hien Image</button></th>
+                    <th>Product</th>
+                    <th>Code</th>
+                    <th>Available</th>
+                    <th>Price</th>
+                    <th>5 Star Rating</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                <tr *ngFor='let p of data'>
+                    <td><img *ngIf="anhien" src="{{p.imageUrl}}" width="50px" height="50px"></td>
+                    <td>{{p.productName}}</td>
+                    <td>{{p.productCode}}</td>
+                    <td>{{p.releaseDate}}</td>
+                    <td>{{p.price}}</td>
+                    <td>{{p.starRating}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

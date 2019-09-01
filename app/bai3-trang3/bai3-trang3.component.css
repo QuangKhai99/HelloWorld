@@ -1,0 +1,76 @@
+.page{
+    margin: 30px 0;
+}
+.breadcrumb{
+    margin-bottom: 30px;
+}
+.form-inline{
+    float: left;
+}
+.btn-left{
+    float: right;
+}
+.input-group {
+    border-radius: 30px;
+
+}
+.input-group-text
+{
+    background-color: white;
+    padding: 0px ;
+    height: 38px;
+}
+img{
+    margin-right:10px;
+    border-radius: 10px;
+}
+.img{
+    height: 38px;
+}
+table{
+    clear: both;
+}
+p{
+    float: left;
+}
+.btn-right{
+    width: 500px;
+    height: 50px;
+    float: right;
+    margin-bottom:20px;
+}
+button{
+    border-radius: 8px;
+    height: 35px;
+}
+input{
+    height: 38px;
+}
+nav{
+    width: 10%px;
+    float: left;
+}
+.right{
+    float: right;
+    width: 90%;
+}
+.nav-item a{
+    color: white;
+    padding-left: 10px;
+}
+a{
+    text-decoration: none;
+}
+.nav-item p{
+    text-align: center;
+}
+.item-top{
+    text-align: center;
+}
+.img2{
+    margin: 0px;
+}
+span img{
+    margin: 0px;
+}
+ 
