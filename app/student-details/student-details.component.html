@@ -1,0 +1,37 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item"><a [routerLink]="['/students']">Students</a></li>
+    <li class="breadcrumb-item active">{{thongtin.LastName}}</li>
+</ul>
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-table"></i> Details
+    </div>
+    <div class="card-body">
+        <p>Last name:</p>
+        <p>{{thongtin.LastName}}</p>
+        <br>
+        <p>First name:</p>
+        <p>{{thongtin.FirstMidName}}</p>
+        <br>
+        <p>Enroll date:</p>
+        <p>{{thongtin.EnrollmentDate}}</p>
+        <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Course Title</th>
+                    <th>Grade</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of s">
+                    <td>{{p.Title}}</td>
+                    <td>{{p.Grade}}</td>
+                    <td>{{p.Credits}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

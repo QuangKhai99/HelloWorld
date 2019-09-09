@@ -1,0 +1,63 @@
+<ul class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Home</a></li>
+    <li class="breadcrumb-item active">Students</li>
+</ul>
+<div class="card">
+    <div class="card-header">
+        <i class="fas fa-table"></i> Danh sach sinh vien
+    </div>
+    <div class="card-body">
+        <div class="form-group form-inline">
+            <input type="text" class="form-control" placeholder="Search for...">
+            <button class="form-control bg-light"><i class="fas fa-search"></i></button>
+        </div>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>LastName</th>
+                    <th>FirstName</th>
+                    <th>EnrollDate</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let p of students | paginate: { itemsPerPage: 3, currentPage: p }">
+                    <td>{{p.LastName}}</td>
+                    <td>{{p.FirstMidName}}</td>
+                    <td>{{p.EnrollmentDate}}</td>
+                    <td>
+                        <button [routerLink]="['/students',p.ID]"><i class="fas fa-info-circle" ></i></button>
+                        &nbsp;
+                        <button type="button" (click)="findId(p.ID)" data-toggle="modal" data-target="#myModal"><i class="far fa-trash-alt"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <span>Show 1 of 3</span>
+        <pagination-controls class="pagination justify-content-end" (pageChange)="p = $event"></pagination-controls>
+    </div>
+</div>
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+                <h4 class="modal-title">Xóa Thông Tin Sinh Viên</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+                Bạn có chắc chắn muốn xóa thông tin về sinh viên này.
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+                <button type="button" (click)="delete()" class="btn btn-danger" data-dismiss="modal">Delete</button>
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+    
