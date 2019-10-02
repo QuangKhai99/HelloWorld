@@ -1,0 +1,102 @@
+<form style="padding-left:100px;">
+    <h3>Bài 1: Tạo form nhập chiều dài và chiều rộng của hình chữ nhật. Viết phương thức
+        tính chu vi và diện tich của hình chữ nhật.</h3>
+    <div class="card" style="width:70%">
+        <div class="card-body">
+            <div class="form-group">
+                <label>Chieu dai:</label><br>
+                <input class="form-control" type="number" [(ngModel)]="hcn.cd" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Chieu rong:</label><br>
+                <input class="form-control" type="number" [(ngModel)]="hcn.cr" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Chu vi:</label><br>
+                <input class="form-control" type="number" [(ngModel)]="hcn.cv" [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label>Dien tich:</label><br>
+                <input class="form-control" type="number" [(ngModel)]="hcn.dt" [ngModelOptions]="{standalone: true}">
+            </div>
+            <button type="submit" class="btn btn-primary" (click)="tinh()">Tinh</button>
+        </div>
+    </div>
+    <br><br><br>
+
+    <h3>Bài 2 : Xây dựng form nhập tính tiền thưởng tết</h3>
+    <div class="card" style="width:70%">
+        <div class="card-header">TINH THUONG TET NGUYEN DAN</div>
+        <div class="card-body">
+            <div class="form-group">
+                <label><b>Ho va ten:</b></label><br>
+                <input type="text" class="form-control" [(ngModel)]="nhanVien.fullName"
+                    [ngModelOptions]="{standalone: true}">
+            </div>
+            <div class="form-group">
+                <label><b>Luong:</b></label><br>
+                <div class="input-group">
+                    <input type="number" class="form-control" [(ngModel)]="nhanVien.salary"
+                        [ngModelOptions]="{standalone: true}">
+                    <div class="input-group-append">
+                        <span class="input-group-text"><b>VND</b></span>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><b>Gioi tinh:</b></label><br>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" [(ngModel)]="nhanVien.gender" value="Nam"
+                            [ngModelOptions]="{standalone: true}" class="form-check-input" name="optradio">Nam
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" [(ngModel)]="nhanVien.gender" value="Nu"
+                            [ngModelOptions]="{standalone: true}" class="form-check-input" name="optradio">Nu
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><b>Do tuoi:</b></label><br>
+                <select class="form-control" [(ngModel)]="nhanVien.rate" [ngModelOptions]="{standalone: true}">
+                    <option *ngFor="let p of doTuoi" value="{{p.rate}}">{{p.age}}</option>
+                </select>
+
+            </div>
+        </div>
+        <div class="card-footer">Tien thuong: <b>{{tinhThuong()}}</b> VND</div>
+    </div>
+    <br><br><br>
+
+    <h3>Bài 3: Xây dựng form bán hàng giải khát</h3>
+    <div class="card" style="width:70%">
+        <div class="card-header">BAN HANG GIAI KHAT</div>
+        <div class="card-body">
+            <div class="table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>TEN HANG</th>
+                        <th>SO LUONG</th>
+                        <th>DON GIA</th>
+                        <th>THANH TIEN (VND)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let p of item">
+                        <td><input type="checkbox" [(ngModel)]="p.trangThai" [ngModelOptions]="{standalone: true}"/></td>
+                        <td>{{p.name}}</td>
+                        <td><input class="form-control" type="number" [(ngModel)]="p.soLuong" [ngModelOptions]="{standalone: true}"></td>
+                        <td>{{p.price}}</td>
+                        <td>
+                            <input type="number" value="{{thanhTien(p.name)}}" style="border:none; background: none;"  disabled>
+                        </td>
+                    </tr>
+                </tbody>
+            </div>
+        </div>
+        <div class="card-footer">TONG TIEN: <b>{{tongTien()}}</b> VND</div>
+    </div>
+</form>

@@ -55,7 +55,9 @@ export class StudentDetailsComponent implements OnInit {
         this.stu.push(item);
       }
     });
-    this.thongtin=this.students.find(item=>item.ID=this.id)
+    this.thongtin=this.students.find(item=>
+      item.ID==this.id)
+      
     this.courses.filter(item => {
       for(let i=0; i< this.stu.length ; i++){
         if(item.CourseID === this.stu[i].CourseID){
